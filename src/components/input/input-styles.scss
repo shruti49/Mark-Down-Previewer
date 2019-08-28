@@ -17,5 +17,18 @@
     resize: none;
     border-radius: 0.3rem;
     padding: 1rem;
+    background-color: #f3ebeb;
+  }
+}
+
+
+@media only screen and (max-width: 890px) {
+  .input {
+    width: 100%;
+
+    &__editor{
+      height: 25rem;
+      margin-bottom:1rem;
+    }
   }
 }
