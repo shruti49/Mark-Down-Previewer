@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Input from './components/input/input-component';
+import Output from './components/output/output-component';
+import Header from './components/header/header-component';
+
+import { placeholder } from './components/input/Placeholder';
+
+export default class App extends Component {
+  state = {
+    markdown: placeholder
+  };
+
+  handleChange = event => {
+    this.setState({
+      markdown: event.target.value
+    });
+  };
+
+  render() {
+    const { markdown } = this.state;
+    return (
+      <div className='app'>
+        <div style={style}>&nbsp;</div>
+        <Header />
+        <div className='container'>
+          <Input markdown={markdown} handleChange={this.handleChange} />
+          <Output markdown={markdown} />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+const style = {
+  height: '4rem',
+  backgroundColor: '#328d90',
+  borderRadius: '.2rem',
+  boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.2)'
+};
