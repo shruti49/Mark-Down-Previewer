@@ -9,3 +9,5 @@ For example creating a header with a short list is pretty easier with Markdown.
 - List Item One
 - List Item Two
 - List Item Three'
+
+### Just write above code in the editor box and the output will be shown in previewer box 
